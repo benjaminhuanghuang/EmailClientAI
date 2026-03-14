@@ -15,7 +15,6 @@ export async function runEmailAgent(userQuery) {
     replies: [],
   };
 
-  // 获取初始邮箱
   const emailsResp = await client.callTool("get_recent_emails");
   state.emails = JSON.parse(emailsResp.content[0].text);
 
